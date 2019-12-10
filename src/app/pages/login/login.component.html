@@ -1,0 +1,15 @@
+<div class="background">
+    <div class="card">
+        <form class="contents">
+          <h1>Studio Ghibli Information</h1>
+          <br />
+          <label>Username</label>
+          <input type="text" name="username" [(ngModel)]="username" required />
+          <label>Password</label>
+          <input type="password" name="password" [(ngModel)]="password" required />
+          <p class="hint"><i>*Hint: Type anything, this is all security theater</i></p>
+          <button type="submit" (click)="doLogin()" *ngIf="!(isLoading$ | async)">Login</button>
+          <app-spinner *ngIf="(isLoading$ | async)"></app-spinner>
+        </form>
+    </div>
+</div>

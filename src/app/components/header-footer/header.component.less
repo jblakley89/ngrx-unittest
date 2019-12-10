@@ -1,0 +1,38 @@
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: darkslategray;
+}
+.logo {
+  height: 95px;
+}
+
+.userInfo {
+  color: white;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 50px 0 0 0;
+  overflow: hidden;
+
+  li {
+    float: left;
+
+    a {
+      display: block;
+      color: grey;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+      &:hover {
+        color: cornflowerblue;
+      }
+      &.active {
+        color: white
+      }
+    }
+  }
+}
