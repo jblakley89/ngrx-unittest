@@ -21,7 +21,7 @@ The best part about these unit tests is that they are almost identical and can b
 # Tests in the app
 Not all components can be purely observables and templates. For these and our services for business logic, we will be writing unit tests with the store mocked. We can do this confidently knowing that the store is well tested.
 
-##Components and Services
+## Components and Services
 These tests are fairly straight forward, mock up the store and make sure your dispatches and selects have the proper followup execution
 
 ## Route Guards
