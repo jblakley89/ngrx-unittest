@@ -13,6 +13,7 @@ import { Character } from '@store/characters/models';
 export class CharactersComponent {
     characters$: Observable<Character[]>;
     isLoading$: Observable<boolean>;
+    error$: Observable<string>;
 
     constructor(
         public store: Store<fromStore.State>
@@ -20,6 +21,7 @@ export class CharactersComponent {
         this.store.dispatch(fromCharacters.getCharacters());
         this.characters$ = this.store.select(fromCharacters.selectCharacters);
         this.isLoading$ = this.store.select(fromCharacters.selectLoading);
+        this.error$ = this.store.select(fromCharacters.selectError);
     }
 
 }

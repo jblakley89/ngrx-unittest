@@ -1,9 +1,15 @@
 <div class="row">
   <div class="col">
     <div class="pageTitle">Films</div>
-    <app-spinner *ngIf="(isLoading$ | async)"></app-spinner>
-    <ngb-accordion [closeOthers]="true" activeIds="static-1" *ngIf="!(isLoading$ | async)">
-      <ngb-panel id="{{index}}" title="{{film.title}}" *ngFor="let film of films$ | async; index as index">
+
+    <app-spinner *ngIf="isLoading"></app-spinner>
+
+    <div *ngIf="!isLoading && error">
+      <p class="error">{{ error }}</p>
+    </div>
+
+    <ngb-accordion [closeOthers]="true" activeIds="static-1" *ngIf="!isLoading">
+      <ngb-panel id="{{index}}" title="{{film.title}}" *ngFor="let film of films; index as index">
         <ng-template ngbPanelContent>
           <div class="row">
             <div class="col-sm-2">
@@ -32,5 +38,6 @@
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
+
   </div>
 </div>

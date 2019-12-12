@@ -1,7 +1,13 @@
 <div class="row">
   <div class="col">
     <div class="pageTitle">Characters</div>
+
     <app-spinner *ngIf="(isLoading$ | async)"></app-spinner>
+
+    <div *ngIf="!(isLoading$ | async) && (error$ | async)">
+      <p class="error">{{ error$ | async }}</p>
+    </div>
+
     <ngb-accordion [closeOthers]="true" activeIds="static-1" *ngIf="!(isLoading$ | async)">
       <ngb-panel id="{{index}}" title="{{character.name}}" *ngFor="let character of characters$ | async; index as index">
         <ng-template ngbPanelContent>
